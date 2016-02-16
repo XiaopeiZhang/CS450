@@ -1,0 +1,10 @@
+My results for 20 philosophers and 1000 meals each:
+Running dining philosophers simulation: 20 philosophers, 10000 meals each
+1. Footman solution, time elapsed: 12.023
+2. Left-handed solution, time elapsed: 9.587
+3. Tanenbaum's solution, time elapsed: 7.607
+
+They are what I expected for my implementation.
+Footman solution: each philosopher has two constraints to conquer before he can eat. One is the availability of both forks, the other is the multiplex footman which has to allow the philosopher to eat. The number of semaphores consumes time.
+Lefthanded solution: each philosopher has one constraint ahead before he can eat, and that is the availability of both forks. In this case, there is only one constraint, so it is relatively faster.
+Tanenbaum's solution: instead of checking the availability of forks randomly, the states of philosophers besides put-down forks are checked right after put-fork operations. It saves time comparing to let other threads check availability randomly. So it is the fastest.
